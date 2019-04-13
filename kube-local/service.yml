@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rest-example
+  labels:
+    app: rest-example
+    tier: backend
+spec:
+  type: LoadBalancer
+  selector:
+    app: rest-example
+    tier: backend
+  ports:
+  - port: 8080

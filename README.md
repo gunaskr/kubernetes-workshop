@@ -31,6 +31,7 @@ In order to begin the workshop, you must have the following softwares installed 
 ```
     kubectl cluster-info
 ```
+- Signup for aws cloud. Yes, you need to give your credit card information! [SingUp Page](https://portal.aws.amazon.com/billing/signup#/start)
 You are set to go!
 
 Get Docker Image
@@ -87,6 +88,48 @@ And navigate to your Kubernetes Dashboard at: http://localhost:8001/api/v1/names
 
 5. Refer this link for creation of user and login [Kubebenetes Dashboard User](https://github.com/kubernetes/dashboard/wiki/Creating-sample-user)
 
+Brief Introduction To Pods, Services and Deployments
+====================================================
+TBD - Introduction to Kubernetes architecture and parts.
 
+Deploying in Local
+==================
+1. Go to kube-local folder.
+2. Creating a service.
+```
+    kubectl create -f service.yml
+```
+3. Check if service is created
+```
+    kubectl get services --all-namespaces
+```
+4. Detailed description of the service
+```
+    kubectl describe service rest-example
+```
+5. Creating a deployment
+```
+    kubectl create -f deployment.yml
+```
+6. Description of the deployment
+```
+    kubectl describe deployment rest-example
+```
+7. Check the pods
+```
+    kubectl get pods
+```
+8. Check if the service has started by checking out the logs of the pod
+```
+    kubectl logs <pod name>
+```
+9. As the localhost becomes our external ip. You can access the deployed application like so.
+```
+    curl http://localhost:8080/hello
+```
+
+Deploying in Cloud
+==================
+TBD - Mostly what we did in local, Just that we need to provide a different context and will acess the application in a generated url.
 
 
